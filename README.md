@@ -5,7 +5,7 @@
 
 
 ## Table of Contents <!-- omit in toc -->
-
+-   [Video](#video)
 -   [Development Instructions](#development-instructions)
 -   [Where to Start in this Repository?](#where-to-start-in-this-repository)
     -   [NeoX T4](#neox-t4)
@@ -15,6 +15,9 @@
     -   [HTML Structure](#html-structure)
     -   [CSS Styling](#css-styling)
     -   [JavaScript Functions](#javascript-functions)
+
+# Video
+![Video](./Genesis-Unipe.mp4)
 
 ## Development Instructions
 
