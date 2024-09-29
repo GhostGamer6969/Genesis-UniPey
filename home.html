@@ -3,51 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniPe</title>
-    <link rel="stylesheet" href="home.css">
+    <title>Send GAS</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <div class="navbar-logo">Unipe</div>
-        <div class="nav-links">
-            <a href="index.html">Payments</a>
-            <a href="contacts.html">Contacts</a>
-            <!-- <a href="#">Transfer</a> -->
-            <a href="#">Manage KYC Information</a>
-            <!-- <a href="#">Dev Helpers</a> -->
-            <a href="#">Log Out</a>
-        </div>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <div class="mobile-menu hidden">
-            <a href="#">Payments</a>
-            <a href="#">Contacts</a>
-            <a href="#">Transfer</a>
-            <a href="#">Manage KYC Information</a>
-            <a href="#">Dev Helpers</a>
-            <a href="#">Log Out</a>
-        </div>
-    </nav>
+    <div class="container">
+        <h1>Pay to:</h1>
+        <!-- Added datalist for recipient input -->
+        <input list="recipientList" id="recipient" placeholder="Recipient Address" required>
+        <datalist id="recipientList">
+            <option value="0x28dd92747c1f572c4b7B21D686D9b17c0d2956Db">
+            <option value="0x49B15bAea7C22Bfe9f97Fc3e48355a3b2F45B31D">
+            <option value="0x48E8A9C944C1bCc9387cd24c1aC4e05689478C9e">
+        </datalist>
 
-    <div class="hero">
-        <h2>Welcome to Unipe</h2>
-        <p>Your one-stop solution for cross-border transactions.</p>
-        <!-- Updated button to redirect to sign-up page -->
-        <button onclick="window.location.href='signup.html'">Get Started</button>
+        <input type="number" id="amount" placeholder="Amount in GAS" required>
+        <button id="sendBtn">Send GAS</button>
+        <p id="message"></p>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Unipe. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            mobileMenu.classList.toggle('active');
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
