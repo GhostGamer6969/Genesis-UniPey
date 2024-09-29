@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+alembic
+pydantic
+twilio
+python-dotenv
+email-validator
+bcrypt
