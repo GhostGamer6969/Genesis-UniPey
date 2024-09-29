@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send GAS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pay to:</h1>
+        <!-- Added datalist for recipient input -->
+        <input list="recipientList" id="recipient" placeholder="Recipient Address" required>
+        <datalist id="recipientList">
+            <option value="0x28dd92747c1f572c4b7B21D686D9b17c0d2956Db">
+            <option value="0x49B15bAea7C22Bfe9f97Fc3e48355a3b2F45B31D">
+            <option value="0x48E8A9C944C1bCc9387cd24c1aC4e05689478C9e">
+        </datalist>
+
+        <input type="number" id="amount" placeholder="Amount in GAS" required>
+        <button id="sendBtn">Send GAS</button>
+        <p id="message"></p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

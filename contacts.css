@@ -1,0 +1,62 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background for minimalistic look */
+    color: #fff; /* Default text color */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em; /* Larger heading */
+    color: #39ff14; /* Neon green color */
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5); /* Neon glow effect */
+    margin: 20px 0;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto; /* Center the table */
+    border-collapse: collapse;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* To clip the border radius */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft shadow for the table */
+}
+
+th, td {
+    border: none; /* No borders for a cleaner look */
+    padding: 15px; /* Increased padding for better readability */
+    text-align: left;
+}
+
+th {
+    background-color: #1e1e1e; /* Dark gray for the header */
+    color: #39ff14; /* Neon green for header text */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+td {
+    background-color: #282828; /* Slightly lighter dark for cells */
+    color: #fff; /* White text for cells */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+td:hover {
+    background-color: #39ff14; /* Neon green on hover */
+    color: #121212; /* Dark text on hover */
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Smaller font size on mobile */
+    }
+
+    table {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    th, td {
+        padding: 10px; /* Smaller padding on mobile */
+    }
+}

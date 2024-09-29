@@ -1,0 +1,90 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400&family=Poppins:wght@600&display=swap');
+
+body {
+    font-family: 'Lora', serif; /* Body font */
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 400px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif; /* Heading font */
+    text-align: center;
+    color: #39ff14; /* Neon green */
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* Slight letter spacing for elegance */
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #39ff14; /* Neon green */
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-family: 'Lora', serif; /* Body font for inputs */
+}
+
+input::placeholder {
+    color: #a0a0a0; /* Light grey */
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #39ff14; /* Neon green */
+    color: #121212; /* Dark background for contrast */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Poppins', sans-serif; /* Heading font for button */
+}
+
+button:hover {
+    background-color: #32c30c; /* Darker neon green */
+}
+
+.toggle {
+    color: #39ff14; /* Neon green */
+    cursor: pointer;
+}
+
+.toggle:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,225 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 15px 5px; /* Add padding to keep content within view */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar-logo {
+    font-size: 2rem; /* Logo size */
+    font-family: 'Playfair Display', serif; /* Classy font */
+    font-weight: bold;
+    color: #39ff14;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+    color: #2dff4c;
+}
+
+.nav-links {
+    display: flex;
+    gap: 5px; /* Reduced gap for minimal spacing */
+    margin-left: 0; /* Adjust margin for centered links */
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 1rem; /* Font size */
+    padding: 10px 15px; /* Adjusted padding for a cleaner look */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.nav-links a:hover {
+    background-color: #39ff14; /* Background change on hover */
+    color: #0f0f0f; /* Text color on hover */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(135deg, #0f0f0f 40%, #39ff14 100%);
+    padding: 0 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif; /* Classy font */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.hero button {
+    padding: 12px 30px;
+    background-color: #39ff14;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    color: #0f0f0f;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #2dff4c;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    padding: 20px 60px;
+    text-align: center;
+    color: #999;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Mobile Menu */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+     /* Added margin for better spacing */
+}
+
+.menu-icon .bar {
+    height: 3px;
+    width: 30px;
+    background-color: #fff;
+    margin: 4px 10px;
+    transition: 0.4s;
+}
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+    right: -100%; /* Initially hide the menu off the screen */
+    width: 100%;
+    max-width: 300px; /* Optional: limit the width */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease; /* Smooth slide effect */
+}
+
+.mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-size: 1.1rem; /* Ensure the text is readable */
+}
+
+.mobile-menu a:hover {
+    color: #39ff14;
+}
+
+/* Hidden class for the mobile menu */
+.hidden {
+    right: -100%;
+}
+
+.active {
+    right: 0; /* When active, the menu slides in */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide desktop links on mobile */
+    }
+
+    .menu-icon {
+        display: flex; /* Show hamburger menu */
+    }
+
+    .hero h2 {
+        font-size: 2.5rem; /* Adjust hero text size */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    nav {
+        padding: 15px 10px; /* Reduce padding on smaller screens */
+    }
+
+    .navbar-logo {
+        font-size: 1.8rem; /* Adjust logo size */
+    }
+
+    .nav-links a {
+        font-size: 1rem; /* Adjust nav link size */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-logo {
+        font-size: 1.5rem; /* Smaller logo size for mobile */
+    }
+
+    .hero h2 {
+        font-size: 2rem; /* Further reduce heading size for very small screens */
+    }
+
+    .hero button {
+        padding: 10px 20px; /* Adjust button size */
+        font-size: 0.9rem; /* Adjust font size */
+    }
+}

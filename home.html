@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniPe</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar-logo">Unipe</div>
+        <div class="nav-links">
+            <a href="index.html">Payments</a>
+            <a href="contacts.html">Contacts</a>
+            <!-- <a href="#">Transfer</a> -->
+            <a href="#">Manage KYC Information</a>
+            <!-- <a href="#">Dev Helpers</a> -->
+            <a href="#">Log Out</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="mobile-menu hidden">
+            <a href="#">Payments</a>
+            <a href="#">Contacts</a>
+            <a href="#">Transfer</a>
+            <a href="#">Manage KYC Information</a>
+            <a href="#">Dev Helpers</a>
+            <a href="#">Log Out</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h2>Welcome to Unipe</h2>
+        <p>Your one-stop solution for cross-border transactions.</p>
+        <!-- Updated button to redirect to sign-up page -->
+        <button onclick="window.location.href='signup.html'">Get Started</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Unipe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

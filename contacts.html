@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacts</title>
+  <link rel="stylesheet" href="contacts.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Contacts</h1>
+  <table id="data-table">
+    <thead>
+      <tr id="table-header">
+        <!-- Table headers will be populated here dynamically -->
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <!-- Table data will be populated here dynamically -->
+    </tbody>
+  </table>
+
+  <script>
+    // Fetch data from Supabase
+    fetch('https://ttczabxqsyuepfkefbes.supabase.co/rest/v1/Unipey?select=name,address,upi_id', {
+      method: 'GET', // This is optional as 'GET' is the default method
+      headers: {
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR0Y3phYnhxc3l1ZXBma2VmYmVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjUzMDQwMjYsImV4cCI6MjA0MDg4MDAyNn0.UPpqvyBsL_pSxZg-HjxjMi_1Ctv8iOxiypjepHKbeyA', // Specify the content type if needed
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR0Y3phYnhxc3l1ZXBma2VmYmVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjUzMDQwMjYsImV4cCI6MjA0MDg4MDAyNn0.UPpqvyBsL_pSxZg-HjxjMi_1Ctv8iOxiypjepHKbeyA', // Example of an authorization header
+      }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json(); // or response.text() for plain text response
+    })
+    .then(data => {
+      console.log(data); // Log the response data to the console
+      displayDataInTable(data); // Call function to display data in table
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+
+    // Function to display data in table format
+    function displayDataInTable(data) {
+      const tableHeader = document.getElementById('table-header');
+      const tableBody = document.getElementById('table-body');
+
+      if (data.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="100%">No data available</td></tr>';
+        return;
+      }
+
+      // Create table headers
+      const headers = Object.keys(data[0]);
+      headers.forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = header;
+        tableHeader.appendChild(th);
+      });
+
+      // Populate table rows
+      data.forEach(row => {
+        const tr = document.createElement('tr');
+        headers.forEach(header => {
+          const td = document.createElement('td');
+          td.textContent = row[header];
+          tr.appendChild(td);
+        });
+        tableBody.appendChild(tr);
+      });
+    }
+  </script>
+</body>
+</html>
